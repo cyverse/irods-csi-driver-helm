@@ -1,0 +1,6 @@
+apiVersion: {{ template "csidriver.apiVersion" . }}
+kind: CSIDriver
+metadata:
+  name: irods.csi.cyverse.org
+spec:
+  attachRequired: false
