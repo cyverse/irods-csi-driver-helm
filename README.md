@@ -4,6 +4,7 @@ This repository publishes iRODS CSI Driver Helm Chart.
 ## Adding this repository to your Helm
 ```
 helm repo add irods-csi-driver-repo https://cyverse.github.io/irods-csi-driver-helm/
+helm repo update
 ```
 
 Verify the repository addition.
