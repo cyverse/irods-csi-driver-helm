@@ -18,6 +18,13 @@ Following example installs the iRODS CSI Driver and `irods-csi-driver` will be t
 helm install irods-csi-driver irods-csi-driver-repo/irods-csi-driver
 ```
 
+To install the helm chart for proxy auth, create a yaml file with driver configuration.
+An example configuration file is available at [proxy_config_example.yaml](https://cyverse.github.io/irods-csi-driver-helm/proxy_config_example.yaml).
+Then install the driver with `-f` flag.
+```
+helm install irods-csi-driver irods-csi-driver-repo/irods-csi-driver -f ./proxy_config_example.yaml
+```
+
 ## Configuring iRODS CSI Driver Globally
 Cluster admins can configure the iRODS CSI Driver's parameters. This can be used to provide default values or to provide proxy authentication. 
 
