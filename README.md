@@ -19,7 +19,7 @@ helm install irods-csi-driver irods-csi-driver-repo/irods-csi-driver
 ```
 
 To install the helm chart for proxy auth, create a yaml file with driver configuration.
-An example configuration file is available at [proxy_config_example.yaml](https://cyverse.github.io/irods-csi-driver-helm/proxy_config_example.yaml).
+An example configuration file is available at [proxy_config_example.yaml](https://cyverse.github.io/irods-csi-driver-helm/examples/proxy_config_example.yaml).
 Then install the driver with `-f` flag.
 ```
 helm install irods-csi-driver irods-csi-driver-repo/irods-csi-driver -f ./proxy_config_example.yaml
