@@ -2,8 +2,27 @@ apiVersion: v1
 entries:
   irods-csi-driver:
   - apiVersion: v2
+    appVersion: 0.9.1
+    created: "2022-12-16T16:02:07.712075292-07:00"
+    description: A Helm chart for iRODS CSI Driver
+    digest: ceb812ae64495397f6a2179b8117dd03a5899bb98bbce2be5d78a222bfcc3cc1
+    home: https://github.com/cyverse/irods-csi-driver
+    keywords:
+    - irods
+    - cyverse
+    - csi
+    kubeVersion: '>=1.14.0-0'
+    maintainers:
+    - name: Illyoung Choi
+    name: irods-csi-driver
+    sources:
+    - https://github.com/cyverse/irods-csi-driver
+    urls:
+    - https://cyverse.github.io/irods-csi-driver-helm/irods-csi-driver-0.9.1.tgz
+    version: 0.9.1
+  - apiVersion: v2
     appVersion: 0.9.0
-    created: "2022-12-14T08:51:08.339955583-07:00"
+    created: "2022-12-16T16:02:07.710149617-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 2837a7b88754b0a3ef182596827a691ca2da76c2715a43470f5b35c934b90793
     home: https://github.com/cyverse/irods-csi-driver
@@ -22,7 +41,7 @@ entries:
     version: 0.9.0
   - apiVersion: v2
     appVersion: 0.8.7
-    created: "2022-12-14T08:51:08.338203995-07:00"
+    created: "2022-12-16T16:02:07.707876472-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 1cc65c01f385c4de07fd4f3be87da5ad1f88bd276f8a6651a9e36b0f9845818f
     home: https://github.com/cyverse/irods-csi-driver
@@ -41,7 +60,7 @@ entries:
     version: 0.8.7
   - apiVersion: v2
     appVersion: 0.8.6
-    created: "2022-12-14T08:51:08.335984049-07:00"
+    created: "2022-12-16T16:02:07.705897645-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 8b2003c0abba2b3730f19373c637b36933708775c58420555271c66103f8191f
     home: https://github.com/cyverse/irods-csi-driver
@@ -60,7 +79,7 @@ entries:
     version: 0.8.6
   - apiVersion: v2
     appVersion: 0.8.4
-    created: "2022-12-14T08:51:08.333721145-07:00"
+    created: "2022-12-16T16:02:07.703901334-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 86b5fde786da8397309bf5eb0f663a3a1b691fd93d01b8404449d02f53ddd2b6
     home: https://github.com/cyverse/irods-csi-driver
@@ -79,7 +98,7 @@ entries:
     version: 0.8.4
   - apiVersion: v2
     appVersion: 0.8.3
-    created: "2022-12-14T08:51:08.326039331-07:00"
+    created: "2022-12-16T16:02:07.7001173-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 8019e8c705142bbb3f0afaf483736e1c49a55e0deba9125f6f474d6c4cab50bd
     home: https://github.com/cyverse/irods-csi-driver
@@ -98,7 +117,7 @@ entries:
     version: 0.8.3
   - apiVersion: v2
     appVersion: 0.8.2
-    created: "2022-12-14T08:51:08.324858516-07:00"
+    created: "2022-12-16T16:02:07.698725963-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: a6e4f1e279deb04b3a4e63309aaa76b6816ed79a6363d7adc0d7e027dc43d137
     home: https://github.com/cyverse/irods-csi-driver
@@ -117,7 +136,7 @@ entries:
     version: 0.8.2
   - apiVersion: v2
     appVersion: 0.8.1
-    created: "2022-12-14T08:51:08.323667064-07:00"
+    created: "2022-12-16T16:02:07.697365677-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 65360f993d37d653061177906edeeeae2788464d6d13b7f29fd4a9b1917f1a96
     home: https://github.com/cyverse/irods-csi-driver
@@ -136,7 +155,7 @@ entries:
     version: 0.8.1
   - apiVersion: v2
     appVersion: 0.8.0
-    created: "2022-12-14T08:51:08.322215655-07:00"
+    created: "2022-12-16T16:02:07.696011517-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: f8332452f303530babc3d36c4610996abe823283f01aca2a80996eefc5542006
     home: https://github.com/cyverse/irods-csi-driver
@@ -155,7 +174,7 @@ entries:
     version: 0.8.0
   - apiVersion: v2
     appVersion: 0.7.0
-    created: "2022-12-14T08:51:08.320798855-07:00"
+    created: "2022-12-16T16:02:07.694416911-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 36780655db3a7a6dcaee7db02ce94ac7044708f86da79ba6911f5c2f9fa95240
     home: https://github.com/cyverse/irods-csi-driver
@@ -174,7 +193,7 @@ entries:
     version: 0.7.0
   - apiVersion: v2
     appVersion: 0.6.4
-    created: "2022-12-14T08:51:08.319491543-07:00"
+    created: "2022-12-16T16:02:07.689514425-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 0f4dd67b745d01511c628a9ba30754ccf0c6237a2c82c7a83c5c7a6a989764d1
     home: https://github.com/cyverse/irods-csi-driver
@@ -193,7 +212,7 @@ entries:
     version: 0.6.4
   - apiVersion: v2
     appVersion: 0.6.3
-    created: "2022-12-14T08:51:08.31806307-07:00"
+    created: "2022-12-16T16:02:07.68838197-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: f4de7401644f3cb193a6c5243aa204fa8946510b81479bee2777f4c0f65615f2
     home: https://github.com/cyverse/irods-csi-driver
@@ -212,7 +231,7 @@ entries:
     version: 0.6.3
   - apiVersion: v2
     appVersion: 0.6.2
-    created: "2022-12-14T08:51:08.316736226-07:00"
+    created: "2022-12-16T16:02:07.687305998-07:00"
     description: A Helm chart for iRODS CSI Driver
     digest: 331ff3a5b85e53ec65b3fb9f2b28592f4d8caa5ab99f682e846d3b6f06ee2780
     home: https://github.com/cyverse/irods-csi-driver
@@ -229,4 +248,4 @@ entries:
     urls:
     - https://cyverse.github.io/irods-csi-driver-helm/irods-csi-driver-0.6.2.tgz
     version: 0.6.2
-generated: "2022-12-14T08:51:08.315048936-07:00"
+generated: "2022-12-16T16:02:07.685920514-07:00"
