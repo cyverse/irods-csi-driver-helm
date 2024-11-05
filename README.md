@@ -30,19 +30,20 @@ Cluster admins can configure the iRODS CSI Driver's parameters. This can be used
 
 To configure the iRODS CSI Driver globally, a secret `<driver-installation-name>-global-secret` should be created in the same namespace as the driver installed (`default` namespace by default). The secret will aready exist when the driver is installed. You will need to delete the existing secret and create a new one.
 
-The following parameters can be set:
+Following parameters can be set:
 
-| Parameter Name       | Description                                                                                               | Example Value              |
-|----------------------|-----------------------------------------------------------------------------------------------------------|----------------------------|
-| `client`            | Default client type                                                                                       | `"irodsfuse"`              |
-| `host`              | Default iRODS hostname                                                                                    | `"data.cyverse.org"`       |
-| `port`              | Default iRODS port (optional, default is `"1247"`)                                                        | `"1247"`                   |
-| `zone`              | Default iRODS zone                                                                                        | `"iplant"`                 |
-| `user`              | iRODS proxy user ID (used for proxy authentication)                                                       | `"rods"`                   |
-| `password`          | iRODS proxy user password (in plain text)                                                                 | `"password"`               |
-| `volumeRootPath`    | iRODS path to mount. Creates a subdirectory per persistent volume (only for dynamic volume provisioning). | `"/iplant/dynamic_volumes"`|
-| `enforceProxyAccess`| Set to `"true"` to mandate passing `clientUser` or using a different `user` as in global configuration.   | `"false"` (default)        |
-| `mountPathWhitelist`| A comma-separated list of paths to allow mounting                                                         | `"/iplant/home"`           |
+| Parameter Name | Description | Example Value |
+| --- | --- | --- |
+| client | Default client type | "irodsfuse" |
+| host | default iRODS hostname | "data.cyverse.org" |
+| port | default iRODS port | Optional, Default "1247" |
+| zone | default iRODS zone | "iplant" |
+| user | iRODS proxy user id (used for proxy authentication) | "rods" |
+| password | iRODS proxy user password | "password" in plane text |
+| volumeRootPath | iRODS path to mount. Creates a subdirectory per persistent volume. (only for dynamic volume provisioning) | "/iplant/dynamic_volumes" |
+| enforceProxyAccess | "true" to mandate passing `clientUser`, or giving different `user` as in global configuration. | "false". "false" by default. |
+| mountPathWhitelist | a comma-separated list of paths to allow mount. | "/iplant/home" |
+
 
 
 To create or delete secrets, please refer this manual 
