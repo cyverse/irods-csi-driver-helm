@@ -13,16 +13,16 @@ helm search repo irods
 ```
 
 ## Installing iRODS CSI Driver Helm Chart
-Following example installs the iRODS CSI Driver and `irods-csi-driver` will be the name of the driver installed.
+Following example installs the iRODS CSI Driver and `irods-csi-driver` will be the name of the driver installed. The iRODS CSI driver will be installed in a namespace `irods-csi-driver`.
 ```
-helm install irods-csi-driver irods-csi-driver-repo/irods-csi-driver
+helm install --create-namespace --namespace irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-csi-driver
 ```
 
 To install the helm chart for proxy auth, create a yaml file with driver configuration.
 An example configuration file is available at [proxy_config_example.yaml](https://cyverse.github.io/irods-csi-driver-helm/examples/proxy_config_example.yaml).
 Then install the driver with `-f` flag.
 ```
-helm install irods-csi-driver irods-csi-driver-repo/irods-csi-driver -f ./proxy_config_example.yaml
+helm install --create-namespace --namespace irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-csi-driver -f ./proxy_config_example.yaml
 ```
 
 ## Configuring iRODS CSI Driver Globally
@@ -48,3 +48,16 @@ Following parameters can be set:
 
 To create or delete secrets, please refer this manual 
 [Managing Secret using Kubectl](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/).
+
+## Installing iRODS CSI Driver in K0S cluster
+`K0S` is another Kubernetes distribution. Unlike other Kubernetes distributions using `/var/lib/kubelet` as kubelet directory, K0S uses `/var/lib/k0s/kubelet`. This causes iRODS CSI Driver to fail mounting a persistent volume. To solve this, set `kubeletDir` to `/var/lib/k0s/kubelet`. 
+
+You can do this by adding `--set kubletDir=/var/lib/k0s/kubelet` to install command like this.
+```
+helm install --create-namespace --namespace irods-csi-driver --set kubeletDir=/var/lib/k0s/kubelet irods-csi-driver irods-csi-driver-repo/irods-csi-driver
+```
+
+Or add following line to the user config file. An example configuration file is available at [k0s.yaml](https://cyverse.github.io/irods-csi-driver-helm/examples/k0s.yaml).
+```
+kubeletDir: /var/lib/k0s/kubelet
+```
