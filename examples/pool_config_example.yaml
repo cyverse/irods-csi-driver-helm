@@ -1,17 +1,3 @@
-controllerService:
-  irodsPlugin:
-    image:
-      repository: cyverse/irods-csi-driver
-      tag: latest
-      pullPolicy: Always
-
-nodeService:
-  irodsPlugin:
-    image:
-      repository: cyverse/irods-csi-driver
-      tag: latest
-      pullPolicy: Always
-
 globalConfig:
   secret:
     stringData:
@@ -22,4 +8,5 @@ globalConfig:
       user: "adminuser"
       password: "password"
       enforceProxyAccess: "true"
+      poolEndpoint: "tcp://pool.testhost.org:12020"
       mountPathWhitelist: "/iplant/home"

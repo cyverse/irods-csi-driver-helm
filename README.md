@@ -19,28 +19,6 @@ helm search repo irods
 - [irodsfs](https://github.com/cyverse/irodsfs)
 - [irodsfsd](https://github.com/cyverse/irodsfsd)
 
-`irodsfsd` runs as a non-root user while kubelet creates CSI staging paths as
-`root`. Grant the `irodsfsd` user access to the driver staging root and set a
-default ACL so newly created volume paths inherit it. Do not change kubelet
-ownership or make its directories world-writable:
-
-```shell
-sudo apt-get install -y acl
-sudo mkdir -p /var/lib/kubelet/plugins/kubernetes.io/csi/irods.csi.cyverse.org
-sudo setfacl -m u:irodsfsd:--x /var/lib/kubelet
-sudo setfacl -m u:irodsfsd:--x /var/lib/kubelet/plugins
-sudo setfacl -m u:irodsfsd:--x /var/lib/kubelet/plugins/kubernetes.io
-sudo setfacl -m u:irodsfsd:--x /var/lib/kubelet/plugins/kubernetes.io/csi
-sudo setfacl -R -m u:irodsfsd:rwx \
-  /var/lib/kubelet/plugins/kubernetes.io/csi/irods.csi.cyverse.org
-sudo setfacl -m d:u:irodsfsd:rwx \
-  /var/lib/kubelet/plugins/kubernetes.io/csi/irods.csi.cyverse.org
-```
-
-For the supplied k3s test setup, the iRODS CSI Driver repository's
-`test/ansible/irodsfsd_install.yml` playbook configures these ACLs
-automatically.
-
 The following example installs the iRODS CSI Driver as `irods-csi-driver` in the `irods-csi-driver` namespace.
 ```
 helm install --create-namespace --namespace irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-csi-driver

@@ -7,6 +7,5 @@ globalConfig:
       zone: "iplant"
       user: "adminuser"
       password: "password"
-      retainData: "false"
       enforceProxyAccess: "true"
       mountPathWhitelist: "/iplant/home"
