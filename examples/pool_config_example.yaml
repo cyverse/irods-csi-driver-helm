@@ -8,5 +8,5 @@ globalConfig:
       user: "adminuser"
       password: "password"
       enforceProxyAccess: "true"
-      poolEndpoint: "tcp://pool.testhost.org:12020"
+      poolEndpoint: "tcp://irodsfs-pool.example.org:12020"
       mountPathWhitelist: "/iplant/home"
