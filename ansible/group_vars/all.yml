@@ -8,14 +8,17 @@ k3s_nodeport_range: "30000:32767"
 # iRODS CSI Driver Helm installation settings.
 csi_release_name: irods-csi-driver
 csi_namespace: irods-csi-driver
-csi_chart_package: "{{ playbook_dir }}/../../irods-csi-driver-0.12.0.tgz"
+csi_helm_repository_name: irods-csi-driver-repo
+csi_helm_repository_url: https://cyverse.github.io/irods-csi-driver-helm
+csi_chart_name: irods-csi-driver
+# Leave empty to install the latest chart published by the repository.
+csi_chart_version: "0.12.0"
 # Ansible searches test/ansible/templates/ for this template by default.
 csi_values_file: user_values.yaml
 csi_helm_timeout: 10m
 # Pin the Helm client version for reproducible test-cluster setup.
 csi_helm_version: v3.17.3
 csi_package_directory: /tmp/irods-csi-driver-helm
-csi_chart_remote_path: "{{ csi_package_directory }}/{{ csi_chart_package | basename }}"
 csi_values_remote_path: "{{ csi_package_directory }}/values.yaml"
 
 # The pool service shares the k3s master in the test topology.  CSI node

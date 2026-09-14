@@ -118,6 +118,12 @@ allows only the workers' internal IPs to reach its gRPC port (12020).
 driver's `poolEndpoint` as `tcp://<master-internal-ip>:12020`. Run the pool
 playbook before installing or upgrading the CSI Helm release.
 
+The CSI install playbook fetches the chart from the
+[iRODS CSI Driver Helm repository](https://github.com/cyverse/irods-csi-driver-helm),
+not from a package on the Ansible control machine. It installs version `0.12.0`
+by default; override `csi_chart_version` (or set it to an empty string for the
+latest published chart) with `-e`.
+
 To remove the service, installed binary, logs, and runtime files while
 preserving pool configuration, data, staged writes, and the service account:
 
