@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv # the name of the pv
+  labels:
+    vol-name: my-pv # same as the name
+spec:
+  capacity:
+    storage: 5Gi # this is required but not meaningful (ignored by csi driver)
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: irods-sc # the name of Storage Class
+  csi:
+    driver: irods.csi.cyverse.org # the name of iRODS CSI driver
+    volumeHandle: my-vol-id # unique volume ID
+    volumeAttributes:
+      client: "irodsfuse" # iRODS client
+      host: "data.cyverse.org" # iRODS host
+      port: "1247" # iRODS port
+      zone: "iplant" # iRODS zone name
+      user: "my_username" # iRODS username
+      password: "my_password" # iRODS password
+      # pathMappings sets multiple iRODS paths for either file or directory in JSON format.
+      pathMappings: '[{"irods_path": "/iplant/home/my_username/input1.gz", "mapping_path": "/input/input1.gz", "resource_type": "file"},{"irods_path": "/iplant/home/my_username/input2.gz", "mapping_path": "/input/input2.gz", "resource_type": "file"},{"irods_path": "/iplant/home/my_username/output", "mapping_path": "/output", "resource_type": "dir"}]'

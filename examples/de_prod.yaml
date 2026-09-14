@@ -1,0 +1,27 @@
+globalConfig:
+  secret:
+    stringData:
+      client: "irodsfuse"
+      host: "data.iplant.org"
+      port: "1247"
+      zone: "iplant"
+      user: "<here>"
+      password: "<here>"
+      retainData: "false"
+      enforceProxyAccess: "true"
+      mountPathWhitelist: "/iplant/home"
+
+controllerService:
+  csiProvisioner:
+    extraArgs:
+      - --timeout=5m
+      - --v=5
+
+nodeService:
+  irodsPlugin:
+    poolServerEndpoint: prod-rodsfs.cyverse.org:12020
+  irodsPool:
+    extraArgs:
+      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/iplant","timeout":"-1ns","inherit":false},{"path":"/iplant/home","timeout":"1h","inherit":false},{"path":"/iplant/home/shared","timeout":"1h","inherit":true}]'
+      - --cache_size_max=10737418240
+      - --data_root=/irodsfs-pool
