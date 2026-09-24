@@ -3,7 +3,7 @@
 #
 # Optionally override the chart version or values template with -e, for example:
 #   ansible-playbook csi_install.yml \
-#     -e csi_chart_version=0.12.0 \
+#     -e csi_chart_version=0.12.1 \
 #     -e csi_values_file=/path/to/values.yaml
 
 - name: Install iRODS CSI Driver Helm chart
@@ -64,7 +64,7 @@
       when: csi_helm_version_check.rc != 0
 
   tasks:
-    - name: Create a directory for Helm values
+    - name: Create a directory for the Helm package
       ansible.builtin.file:
         path: "{{ csi_package_directory }}"
         state: directory
