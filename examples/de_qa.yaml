@@ -2,7 +2,7 @@ globalConfig:
   secret:
     stringData:
       client: "irodsfuse"
-      host: "bishop.cyverse.org"
+      host: "data.cyverse.rocks"
       port: "1247"
       zone: "cyverse"
       user: "de-irods"
@@ -10,18 +10,4 @@ globalConfig:
       retainData: "false"
       enforceProxyAccess: "true"
       mountPathWhitelist: "/cyverse/home"
-
-controllerService:
-  csiProvisioner:
-    extraArgs:
-      - --timeout=5m
-      - --v=5
-
-nodeService:
-  irodsPlugin:
-    poolServerEndpoint: qa-rodsfs.cyverse.org:12020
-  irodsPool:
-    extraArgs:
-      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/cyverse","timeout":"-1ns","inherit":false},{"path":"/cyverse/home","timeout":"1h","inherit":false},{"path":"/cyverse/home/shared","timeout":"1h","inherit":true}]'
-      - --cache_size_max=10737418240
-      - --data_root=/irodsfs-pool
+      poolEndpoint: tcp://qa-rodsfs.cyverse.org:12020
