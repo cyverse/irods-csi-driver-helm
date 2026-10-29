@@ -12,6 +12,11 @@ Verify the repository addition.
 helm search repo irods
 ```
 
+## Requirements
+
+- Helm 3+
+- Kubernetes 1.20 or higher. Chart version 0.12.4 and later use `csi-provisioner` v5.3.0, which requires Kubernetes 1.20; Helm refuses to install the chart on older clusters.
+
 ## Installing iRODS CSI Driver Helm Chart
 
 `irodsfs` and `irodsfsd` must be installed before installing or using the iRODS CSI Driver. You can obtain them from the following repositories:
